@@ -3,131 +3,107 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eric · Minecraft plugin developer</title>
-  <meta name="description" content="Eric builds Paper, Velocity and BungeeCord plugins and libraries, and develops for OG-Network and SuperSMP.">
-  <meta property="og:title" content="Eric · Minecraft plugin developer">
-  <meta property="og:description" content="Plugins and libraries for Paper, Velocity and BungeeCord.">
+  <title>Eric</title>
+  <meta name="description" content="Hi, I'm Eric. Software developer working on Minecraft plugins, libraries and servers.">
+  <meta property="og:title" content="Eric">
+  <meta property="og:description" content="Software developer working on Minecraft plugins, libraries and servers.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ericlmao.github.io/">
-  <meta name="theme-color" content="#08090a">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta name="theme-color" content="#0a0a0a">
+  <link rel="icon" href="icons/eric.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="glow" aria-hidden="true"></div>
-
-  <header class="nav">
-    <a class="brand" href="#top" aria-label="Eric, home">
-      <img src="favicon.svg" alt="" width="20" height="20">
-      <span>eric</span>
-    </a>
-    <nav aria-label="Sections">
-      <a href="#projects">Projects</a>
-      <a href="#servers">Servers</a>
-      <a href="https://github.com/ericlmao" class="nav-gh" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+  <main>
+    <header class="intro">
+      <img class="avatar" src="icons/eric.jpg" alt="Eric's avatar" width="56" height="56">
+      <h1>Hi, I'm Eric</h1>
+      <p>Experienced software developer.</p>
+      <a class="link" href="https://github.com/ericlmao">
+        <svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
+        ericlmao
       </a>
-    </nav>
-  </header>
+    </header>
 
-  <main id="top">
-    <section class="hero">
-      <a class="badge" href="#servers" data-fade>
-        <span class="dot"></span>
-        Currently developing for OG-Network
-      </a>
-      <h1 data-fade>
-        Eric.<br>
-        <span>Minecraft plugin developer.</span>
-      </h1>
-      <p class="sub" data-fade>
-        I build plugins and libraries for Paper, Velocity and BungeeCord,
-        mostly in Java, and develop for servers with hundreds of daily players.
-      </p>
-      <div class="actions" data-fade>
-        <a class="btn primary" href="#projects">View projects</a>
-        <a class="btn" href="https://github.com/ericlmao">GitHub</a>
-      </div>
+    <section>
+      <h2>Projects</h2>
+      <ul class="list">
+        <li>
+          <a class="row" href="http://paperkeystool.ericlmao.com/">
+            <img class="icon" src="icons/papermc.png" alt="" width="40" height="40">
+            <span class="text"><span class="name">PaperMC Registry Index</span><span class="desc">Every registry and tag key for each Minecraft version.</span></span>
+            <span class="meta">Web tool</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="https://github.com/moonrise-studios/plugin-engine">
+            <img class="icon" src="icons/moonrise.png" alt="" width="40" height="40">
+            <span class="text"><span class="name">plugin-engine</span><span class="desc">Building blocks for Paper, Velocity and BungeeCord plugins.</span></span>
+            <span class="meta">Library</span>
+          </a>
+        </li>
+        <li>
+          <a class="row" href="https://github.com/moonrise-studios/moss">
+            <img class="icon" src="icons/moonrise.png" alt="" width="40" height="40">
+            <span class="text"><span class="name">moss</span><span class="desc">Spring dependency injection for Minecraft plugins.</span></span>
+            <span class="meta">Library</span>
+          </a>
+        </li>
+        <li>
+          <div class="row">
+            <span class="icon icon-glyph" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="20" height="20"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8M16 16l6-6M8 8l6-6M9 7l8 8M21 11l-8-8"/></svg>
+            </span>
+            <span class="text"><span class="name">Punishments</span><span class="desc">Bans, mutes and warnings. Previously sold on BuiltByBit.</span></span>
+            <span class="meta">Plugin</span>
+          </div>
+        </li>
+        <li>
+          <a class="row" href="https://github.com/RealViewExtension/RealViewExtension">
+            <img class="icon" src="icons/realview.png" alt="" width="40" height="40">
+            <span class="text"><span class="name">RealView</span><span class="desc">Shows engaged views in YouTube Studio again.</span></span>
+            <span class="meta">Extension</span>
+          </a>
+        </li>
+      </ul>
     </section>
 
-    <section class="section" id="projects">
-      <div class="section-head" data-fade>
-        <h2>Projects</h2>
-        <p>Minecraft tools, libraries and plugins.</p>
-      </div>
-
-      <div class="grid">
-        <a class="card span-2" href="http://paperkeystool.ericlmao.com/" data-fade>
-          <div class="card-top"><span class="tag">Web tool</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
-          <h3>PaperMC Registry Index</h3>
-          <p>Search every Minecraft registry key and tag key, for every version, taken straight from Paper's generated sources.</p>
-        </a>
-        <a class="card" href="https://github.com/moonrise-studios/plugin-engine" data-fade>
-          <div class="card-top"><span class="tag">Library</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
-          <h3>plugin-engine</h3>
-          <p>Commands, schedulers, GUIs, toasts and config for Paper, Velocity and BungeeCord.</p>
-        </a>
-        <a class="card" href="https://github.com/moonrise-studios/moss" data-fade>
-          <div class="card-top"><span class="tag">Library</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
-          <h3>moss</h3>
-          <p>Spring dependency injection and lifecycle hooks inside a Minecraft plugin.</p>
-        </a>
-        <div class="card" data-fade>
-          <div class="card-top"><span class="tag">Plugin</span><span class="muted-label">Retired</span></div>
-          <h3>Punishments</h3>
-          <p>Bans, mutes and warnings with history. Sold on BuiltByBit.</p>
-        </div>
-        <a class="card" href="https://github.com/RealViewExtension/RealViewExtension" data-fade>
-          <div class="card-top"><span class="tag">Chrome extension</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
-          <h3>RealView</h3>
-          <p>Brings back engaged views in YouTube Studio, the old 30-second view count.</p>
-        </a>
-      </div>
-    </section>
-
-    <section class="section" id="servers">
-      <div class="section-head" data-fade>
-        <h2>Servers</h2>
-        <p>Custom development for other networks, plus a couple of my own.</p>
-      </div>
-
-      <div class="grid servers">
-        <div class="card stat" data-fade>
-          <div class="card-top"><span class="status live">Current</span></div>
-          <h3>OG-Network</h3>
-          <p class="num">100+</p>
-          <p class="num-label">daily active players</p>
-        </div>
-        <div class="card stat" data-fade>
-          <div class="card-top"><span class="status live">Current · part time</span></div>
-          <h3>SuperSMP</h3>
-          <p class="num">20</p>
-          <p class="num-label">daily active players</p>
-        </div>
-        <div class="card stat" data-fade>
-          <div class="card-top"><span class="status">Shut down</span></div>
-          <h3>Skycade</h3>
-          <p class="num">300–1,000</p>
-          <p class="num-label">daily active players while I was a developer</p>
-        </div>
-        <div class="card stat" data-fade>
-          <div class="card-top"><span class="status">Shut down</span></div>
-          <h3>SoupPvP</h3>
-          <p class="num">20–30</p>
-          <p class="num-label">daily active players, as owner and sole developer</p>
-        </div>
-      </div>
+    <section>
+      <h2>Servers</h2>
+      <ul class="list">
+        <li>
+          <div class="row">
+            <img class="icon pixel" src="icons/og-network.png" alt="" width="40" height="40">
+            <span class="text"><span class="name">OG-Network</span><span class="desc">100+ daily players</span></span>
+            <span class="meta live">Current</span>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <img class="icon pixel" src="icons/supersmp.png" alt="" width="40" height="40">
+            <span class="text"><span class="name">SuperSMP</span><span class="desc">20 daily players · part time</span></span>
+            <span class="meta live">Current</span>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <img class="icon" src="icons/skycade.jpg" alt="" width="40" height="40">
+            <span class="text"><span class="name">Skycade</span><span class="desc">300 to 1,000 daily players while I was a developer</span></span>
+            <span class="meta">Closed</span>
+          </div>
+        </li>
+        <li>
+          <div class="row">
+            <img class="icon" src="icons/souppvp.png" alt="" width="40" height="40">
+            <span class="text"><span class="name">SoupPvP</span><span class="desc">20 to 30 daily players · owner and sole developer</span></span>
+            <span class="meta">Closed</span>
+          </div>
+        </li>
+      </ul>
     </section>
   </main>
-
-  <footer class="footer">
-    <span>© <span id="year">2026</span> Eric</span>
-    <a href="https://github.com/ericlmao">github.com/ericlmao</a>
-  </footer>
-
-  <script src="script.js" defer></script>
 </body>
 </html>

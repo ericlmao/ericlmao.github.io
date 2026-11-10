@@ -2,14 +2,13 @@
 
 Personal site, served by GitHub Pages at https://ericlmao.github.io.
 
-Plain HTML, CSS and JavaScript. No build step and no dependencies.
+Plain HTML and CSS. No build step, no JavaScript.
 
 ## Files
 
-- `index.html`: page content. Projects and servers are `.card` elements in a grid.
+- `index.html`: page content. Projects and servers are list rows with an icon, a name, a one-line description and a label.
 - `style.css`: styles.
-- `script.js`: scroll fade-ins and the card hover spotlight. Respects reduced motion.
-- `favicon.svg`: site icon.
+- `icons/`: avatar, project logos and server icons. OG-Network and SuperSMP icons are the server-list icons from their live servers, Skycade is cropped from its archived site logo, the rest are GitHub organization avatars.
 - `.nojekyll`: tells GitHub Pages to serve files as-is.
 
 ## Local preview
