@@ -3,143 +3,90 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Eric — Software Developer</title>
-  <meta name="description" content="Eric is a software developer in Canada building Minecraft server plugins, Java libraries and developer tools.">
-  <meta property="og:title" content="Eric — Software Developer">
-  <meta property="og:description" content="Minecraft plugins, Java libraries and developer tools.">
+  <title>Eric</title>
+  <meta name="description" content="Projects by Eric: Minecraft plugins, libraries, server development and a few other things.">
+  <meta property="og:title" content="Eric">
+  <meta property="og:description" content="Minecraft plugins, libraries, server development and a few other things.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ericlmao.github.io/">
-  <meta name="theme-color" content="#0d0f12">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <a class="skip" href="#main">Skip to content</a>
-
-  <header class="nav">
-    <div class="wrap nav-inner">
-      <a class="logo" href="#top" aria-label="Home"><span class="prompt">~/</span>eric</a>
-      <nav aria-label="Primary">
-        <a href="#work">Work</a>
-        <a href="#repos">Repos</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
-
-  <main id="main">
-    <section class="hero wrap" id="top">
-      <p class="eyebrow">Software developer · Canada</p>
-      <h1>I build Minecraft server plugins, Java libraries and small tools that save time.</h1>
-      <p class="lede">
-        Mostly Java and Kotlin on Paper, with some TypeScript and shell when the job calls for it.
-        I like clean APIs, fast servers and automating anything I have to do twice.
+  <main>
+    <header>
+      <h1>Eric</h1>
+      <p>
+        Developer from Canada. I mostly write Minecraft server software in Java.
+        You can find my code on <a href="https://github.com/ericlmao">GitHub</a>.
       </p>
-      <div class="cta">
-        <a class="btn primary" href="#work">See my work</a>
-        <a class="btn" href="https://github.com/ericlmao" target="_blank" rel="noopener">GitHub</a>
-      </div>
-      <ul class="stats" aria-label="GitHub stats">
-        <li><span data-stat="repos">90+</span> public repos</li>
-        <li><span data-stat="since">2021</span> shipping since</li>
-        <li><span>Java</span> main language</li>
+    </header>
+
+    <h2>Projects</h2>
+
+    <section aria-labelledby="minecraft">
+      <h3 id="minecraft">Minecraft</h3>
+      <ul class="list">
+        <li>
+          <a href="http://paperkeystool.ericlmao.com/">PaperMC Registry Index</a>
+          <span class="kind">web tool</span>
+          <p>Every registry key and tag key for each Minecraft version, pulled from Paper's generated sources.</p>
+        </li>
+        <li>
+          <a href="https://github.com/moonrise-studios/plugin-engine">plugin-engine</a>
+          <span class="kind">library</span>
+          <p>A Spring-based engine for building Minecraft plugins.</p>
+        </li>
+        <li>
+          <a href="https://github.com/moonrise-studios/moss">moss</a>
+          <span class="kind">library</span>
+          <p>Spring-style dependency injection and context management for Minecraft plugins.</p>
+        </li>
+        <li>
+          <span class="name">Punishments</span>
+          <span class="kind">plugin</span>
+          <p>A punishment plugin I used to sell on BuiltByBit.</p>
+        </li>
       </ul>
     </section>
 
-    <section class="wrap section" id="work">
-      <div class="section-head">
-        <h2>Featured work</h2>
-        <p>A few projects I'm proud of.</p>
-      </div>
-      <div class="grid">
-        <article class="card">
-          <div class="card-top"><span class="lang java">Java</span></div>
-          <h3><a href="https://github.com/ericlmao/alumina" target="_blank" rel="noopener">Alumina</a></h3>
-          <p>An all-in-one Paper plugin library that cuts the boilerplate out of plugin development.</p>
-          <ul class="tags"><li>Paper</li><li>Library</li></ul>
-        </article>
-        <article class="card">
-          <div class="card-top"><span class="lang java">Java</span></div>
-          <h3><a href="https://github.com/ericlmao/pew" target="_blank" rel="noopener">PEW</a></h3>
-          <p>Paper Enchant Wrapper. A clean API for registering custom enchantments on 1.21+.</p>
-          <ul class="tags"><li>Paper 1.21+</li><li>API</li></ul>
-        </article>
-        <article class="card">
-          <div class="card-top"><span class="lang java">Java</span></div>
-          <h3><a href="https://github.com/ericlmao/LeaderboardsPlus" target="_blank" rel="noopener">LeaderboardsPlus</a></h3>
-          <p>Create and track custom statistics, then build leaderboards from them automatically.</p>
-          <ul class="tags"><li>Plugin</li><li>Stats</li></ul>
-        </article>
-        <article class="card">
-          <div class="card-top"><span class="lang ts">TypeScript</span></div>
-          <h3><a href="https://github.com/ericlmao/timezone-catalog" target="_blank" rel="noopener">Timezone Catalog</a></h3>
-          <p>A geographic timezone lookup for developers. Search places, abbreviations and offsets, then copy runtime-specific code.</p>
-          <ul class="tags"><li>Web</li><li>Dev tool</li></ul>
-        </article>
-        <article class="card">
-          <div class="card-top"><span class="lang kt">Kotlin</span></div>
-          <h3><a href="https://github.com/ericlmao/KotlinKitPvP" target="_blank" rel="noopener">KotlinKitPvP</a></h3>
-          <p>A KitPvP plugin written in Kotlin, built to learn the language end to end.</p>
-          <ul class="tags"><li>Plugin</li><li>Kotlin</li></ul>
-        </article>
-        <article class="card">
-          <div class="card-top"><span class="lang java">Java</span></div>
-          <h3><a href="https://github.com/ericlmao/JDA-Extras" target="_blank" rel="noopener">JDA-Extras</a></h3>
-          <p>An abstract slash command system for the Java Discord API.</p>
-          <ul class="tags"><li>Discord</li><li>API</li></ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="wrap section" id="repos">
-      <div class="section-head">
-        <h2>Recently updated</h2>
-        <p>Pulled live from GitHub.</p>
-      </div>
-      <ul class="repo-list" id="repo-list" aria-live="polite">
-        <li class="repo-empty">Loading repositories…</li>
+    <section aria-labelledby="servers">
+      <h3 id="servers">Minecraft servers</h3>
+      <p class="note">I've done custom development for several servers, and run a couple of my own.</p>
+      <ul class="list">
+        <li>
+          <span class="name">OG-Network</span>
+          <span class="kind">current</span>
+          <p>100+ daily active players.</p>
+        </li>
+        <li>
+          <span class="name">SuperSMP</span>
+          <span class="kind">current, part time</span>
+          <p>20 daily active players.</p>
+        </li>
+        <li>
+          <span class="name">Skycade</span>
+          <span class="kind">shut down</span>
+          <p>300 to 1,000 daily active players while I was a developer there.</p>
+        </li>
+        <li>
+          <span class="name">SoupPvP</span>
+          <span class="kind">shut down</span>
+          <p>Owner and sole developer. 20 to 30 daily active players.</p>
+        </li>
       </ul>
-      <a class="more" href="https://github.com/ericlmao?tab=repositories" target="_blank" rel="noopener">All repositories →</a>
     </section>
 
-    <section class="wrap section about" id="about">
-      <div class="section-head">
-        <h2>About</h2>
-      </div>
-      <div class="about-body">
-        <p>
-          I'm Eric, a developer based in Canada. I started out writing plugins for my own Minecraft
-          servers and kept going: cores, minigames, libraries and commissioned work for other servers.
-        </p>
-        <p>
-          These days I split my time between Paper plugins, reusable Java libraries, and small
-          web and CLI tools that remove friction from everyday development.
-        </p>
-        <h3>Tools I use</h3>
-        <ul class="skills">
-          <li>Java</li><li>Kotlin</li><li>Paper / Bukkit</li><li>Gradle</li><li>Redis</li>
-          <li>JDA</li><li>TypeScript</li><li>Shell</li><li>Git</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="wrap section contact" id="contact">
-      <h2>Let's work together</h2>
-      <p>Need a plugin, a server core or a tool built? Reach out on GitHub.</p>
-      <div class="cta">
-        <a class="btn primary" href="https://github.com/ericlmao" target="_blank" rel="noopener">github.com/ericlmao</a>
-      </div>
+    <section aria-labelledby="other">
+      <h3 id="other">Non-Minecraft</h3>
+      <ul class="list">
+        <li>
+          <a href="https://github.com/RealViewExtension/RealViewExtension">RealViewExtension</a>
+          <span class="kind">Chrome extension</span>
+          <p>Makes YouTube Studio show engaged views, the old 30-second view count, in place of the newer Views number.</p>
+        </li>
+      </ul>
     </section>
   </main>
-
-  <footer class="wrap footer">
-    <p>© <span id="year">2026</span> Eric. Hosted on GitHub Pages.</p>
-  </footer>
-
-  <script src="script.js" defer></script>
 </body>
 </html>
