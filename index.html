@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,45 +28,70 @@
       </a>
     </header>
 
-    <div class="groups">
-    <details class="group" open>
-      <summary>
-        <span class="g-title">Projects</span>
-        <span class="g-count">5</span>
-        <span class="g-stack" aria-hidden="true"><img src="icons/papermc.png" alt="" width="22" height="22"><img src="icons/moonrise.png" alt="" width="22" height="22"><img src="icons/realview.png" alt="" width="22" height="22"></span>
-        <svg class="chev" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-      </summary>
-      <div class="g-body">
+    <div class="explorer">
+      <div class="tabs" role="group" aria-label="Sections">
+        <button class="tab" type="button" aria-expanded="false" aria-controls="panel-projects" data-section="projects">Projects <span class="count">5</span><svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <button class="tab" type="button" aria-expanded="false" aria-controls="panel-servers" data-section="servers">Servers <span class="count">4</span><svg class="chev" viewBox="0 0 24 24" width="14" height="14" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      </div>
+
+      <div class="stage">
+        <div class="idle">
+          <div class="marquee">
+            <div class="track">
+          <button class="chip" type="button" data-item="registry" data-section="projects" data-label="PaperMC Registry Index" data-meta="Web tool" aria-label="PaperMC Registry Index, Web tool"><img class="chip-icon" src="icons/papermc.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="engine" data-section="projects" data-label="plugin-engine" data-meta="Library" aria-label="plugin-engine, Library"><img class="chip-icon" src="icons/moonrise.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="moss" data-section="projects" data-label="moss" data-meta="Library" aria-label="moss, Library"><img class="chip-icon" src="icons/moonrise.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="punishments" data-section="projects" data-label="Punishments" data-meta="Plugin" aria-label="Punishments, Plugin"><span class="chip-icon icon-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8M16 16l6-6M8 8l6-6M9 7l8 8M21 11l-8-8"/></svg></span></button>
+          <button class="chip" type="button" data-item="realview" data-section="projects" data-label="RealView" data-meta="Extension" aria-label="RealView, Extension"><img class="chip-icon" src="icons/realview.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="og" data-section="servers" data-label="OG-Network" data-meta="Current" aria-label="OG-Network, Current"><img class="chip-icon pixel" src="icons/og-network.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="supersmp" data-section="servers" data-label="SuperSMP" data-meta="Current" aria-label="SuperSMP, Current"><img class="chip-icon pixel" src="icons/supersmp.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="skycade" data-section="servers" data-label="Skycade" data-meta="Closed" aria-label="Skycade, Closed"><img class="chip-icon" src="icons/skycade.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="souppvp" data-section="servers" data-label="SoupPvP" data-meta="Closed" aria-label="SoupPvP, Closed"><img class="chip-icon" src="icons/souppvp.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="registry" data-section="projects" data-label="PaperMC Registry Index" data-meta="Web tool" tabindex="-1" aria-hidden="true"><img class="chip-icon" src="icons/papermc.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="engine" data-section="projects" data-label="plugin-engine" data-meta="Library" tabindex="-1" aria-hidden="true"><img class="chip-icon" src="icons/moonrise.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="moss" data-section="projects" data-label="moss" data-meta="Library" tabindex="-1" aria-hidden="true"><img class="chip-icon" src="icons/moonrise.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="punishments" data-section="projects" data-label="Punishments" data-meta="Plugin" tabindex="-1" aria-hidden="true"><span class="chip-icon icon-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8M16 16l6-6M8 8l6-6M9 7l8 8M21 11l-8-8"/></svg></span></button>
+          <button class="chip" type="button" data-item="realview" data-section="projects" data-label="RealView" data-meta="Extension" tabindex="-1" aria-hidden="true"><img class="chip-icon" src="icons/realview.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="og" data-section="servers" data-label="OG-Network" data-meta="Current" tabindex="-1" aria-hidden="true"><img class="chip-icon pixel" src="icons/og-network.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="supersmp" data-section="servers" data-label="SuperSMP" data-meta="Current" tabindex="-1" aria-hidden="true"><img class="chip-icon pixel" src="icons/supersmp.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="skycade" data-section="servers" data-label="Skycade" data-meta="Closed" tabindex="-1" aria-hidden="true"><img class="chip-icon" src="icons/skycade.png" alt="" width="44" height="44"></button>
+          <button class="chip" type="button" data-item="souppvp" data-section="servers" data-label="SoupPvP" data-meta="Closed" tabindex="-1" aria-hidden="true"><img class="chip-icon" src="icons/souppvp.png" alt="" width="44" height="44"></button>
+            </div>
+          </div>
+          <p class="caption" aria-live="polite"><span class="cap-name"></span><span class="cap-meta"></span></p>
+        </div>
+
+      <div class="panel" id="panel-projects" role="region" aria-label="Projects">
         <ul class="list">
-          <li>
+          <li id="item-registry">
             <a class="row" href="http://paperkeystool.ericlmao.com/">
               <img class="icon" src="icons/papermc.png" alt="" width="32" height="32">
               <span class="text"><span class="name">PaperMC Registry Index<svg class="out" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="desc">Every registry and tag key for each Minecraft version.</span></span>
               <span class="meta">Web tool</span>
             </a>
           </li>
-          <li>
+          <li id="item-engine">
             <a class="row" href="https://github.com/moonrise-studios/plugin-engine">
               <img class="icon" src="icons/moonrise.png" alt="" width="32" height="32">
               <span class="text"><span class="name">plugin-engine<svg class="out" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="desc">Building blocks for Paper, Velocity and BungeeCord plugins.</span></span>
               <span class="meta">Library</span>
             </a>
           </li>
-          <li>
+          <li id="item-moss">
             <a class="row" href="https://github.com/moonrise-studios/moss">
               <img class="icon" src="icons/moonrise.png" alt="" width="32" height="32">
               <span class="text"><span class="name">moss<svg class="out" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="desc">Spring dependency injection for Minecraft plugins.</span></span>
               <span class="meta">Library</span>
             </a>
           </li>
-          <li>
+          <li id="item-punishments">
             <div class="row">
               <span class="icon icon-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8M16 16l6-6M8 8l6-6M9 7l8 8M21 11l-8-8"/></svg></span>
               <span class="text"><span class="name">Punishments</span><span class="desc">A LiteBans extension adding GUIs, structured punishments and more.</span></span>
               <span class="meta">Plugin</span>
             </div>
           </li>
-          <li>
+          <li id="item-realview">
             <a class="row" href="https://github.com/RealViewExtension/RealViewExtension">
               <img class="icon" src="icons/realview.png" alt="" width="32" height="32">
               <span class="text"><span class="name">RealView<svg class="out" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="desc">Shows engaged views in YouTube Studio again.</span></span>
@@ -75,39 +100,30 @@
           </li>
         </ul>
       </div>
-    </details>
-
-    <details class="group" open>
-      <summary>
-        <span class="g-title">Servers</span>
-        <span class="g-count">4</span>
-        <span class="g-stack" aria-hidden="true"><img src="icons/og-network.png" alt="" class=pixel width="22" height="22"><img src="icons/supersmp.png" alt="" class=pixel width="22" height="22"><img src="icons/skycade.png" alt="" width="22" height="22"><img src="icons/souppvp.png" alt="" width="22" height="22"></span>
-        <svg class="chev" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
-      </summary>
-      <div class="g-body">
+      <div class="panel" id="panel-servers" role="region" aria-label="Servers">
         <ul class="list">
-          <li>
+          <li id="item-og">
             <a class="row glow" href="https://www.og-network.net/members/negativekb.9079/#recent-content">
               <img class="icon pixel" src="icons/og-network.png" alt="" width="32" height="32">
               <span class="text"><span class="name">OG-Network<svg class="out" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="role">Development Manager, RPG-SMP Manager</span><span class="desc">100+ daily players</span></span>
               <span class="meta live">Current</span>
             </a>
           </li>
-          <li>
+          <li id="item-supersmp">
             <div class="row">
               <img class="icon pixel" src="icons/supersmp.png" alt="" width="32" height="32">
               <span class="text"><span class="name">SuperSMP</span><span class="desc">20 daily players · part time</span></span>
               <span class="meta live">Current</span>
             </div>
           </li>
-          <li>
+          <li id="item-skycade">
             <div class="row">
               <img class="icon" src="icons/skycade.png" alt="" width="32" height="32">
               <span class="text"><span class="name">Skycade</span><span class="desc">300 to 1,000 daily players while I was a developer</span></span>
               <span class="meta">Closed</span>
             </div>
           </li>
-          <li>
+          <li id="item-souppvp">
             <div class="row">
               <img class="icon" src="icons/souppvp.png" alt="" width="32" height="32">
               <span class="text"><span class="name">SoupPvP</span><span class="desc">20 to 30 daily players · owner and sole developer</span></span>
@@ -116,10 +132,10 @@
           </li>
         </ul>
       </div>
-    </details>
-
+      </div>
     </div>
   </main>
   <script src="type.js"></script>
+  <script src="explorer.js"></script>
 </body>
 </html>
