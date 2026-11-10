@@ -9,197 +9,125 @@
   <meta property="og:description" content="Plugins and libraries for Paper, Velocity and BungeeCord.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ericlmao.github.io/">
-  <meta name="theme-color" content="#f2f8ff">
+  <meta name="theme-color" content="#08090a">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="top">
-    <div class="wrap top-inner">
-      <a class="brand" href="#top" aria-label="Eric, home">
-        <svg class="mark" viewBox="0 0 12 12" width="22" height="22" aria-hidden="true">
-          <rect x="0" y="0" width="4" height="4"/><rect x="4" y="0" width="4" height="4"/><rect x="8" y="0" width="4" height="4" class="hot"/>
-          <rect x="0" y="4" width="4" height="4"/><rect x="4" y="4" width="4" height="4"/>
-          <rect x="0" y="8" width="4" height="4"/><rect x="4" y="8" width="4" height="4"/><rect x="8" y="8" width="4" height="4"/>
-        </svg>
-        <span>eric</span>
+  <div class="glow" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="Eric, home">
+      <img src="favicon.svg" alt="" width="20" height="20">
+      <span>eric</span>
+    </a>
+    <nav aria-label="Sections">
+      <a href="#projects">Projects</a>
+      <a href="#servers">Servers</a>
+      <a href="https://github.com/ericlmao" class="nav-gh" aria-label="GitHub">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>
       </a>
-      <nav aria-label="Sections">
-        <a href="#minecraft">Plugins</a>
-        <a href="#servers">Servers</a>
-        <a href="#other">Other</a>
-        <a href="https://github.com/ericlmao" class="gh">GitHub ↗</a>
-      </nav>
-    </div>
+    </nav>
   </header>
 
   <main id="top">
-    <section class="hero wrap">
-      <div class="hero-copy">
-        <h1 data-hero>I write the plugins that Minecraft servers run on.</h1>
-        <p class="sub" data-hero>
-          Libraries and plugins for Paper, Velocity and BungeeCord, mostly in Java.
-          Right now I develop for OG-Network and SuperSMP.
-        </p>
-        <div class="actions" data-hero>
-          <a class="btn" href="#minecraft">See the work</a>
-          <a class="btn ghost" href="https://github.com/ericlmao">github.com/ericlmao</a>
+    <section class="hero">
+      <a class="badge" href="#servers" data-fade>
+        <span class="dot"></span>
+        Currently developing for OG-Network
+      </a>
+      <h1 data-fade>
+        Eric.<br>
+        <span>Minecraft plugin developer.</span>
+      </h1>
+      <p class="sub" data-fade>
+        I build plugins and libraries for Paper, Velocity and BungeeCord,
+        mostly in Java, and develop for servers with hundreds of daily players.
+      </p>
+      <div class="actions" data-fade>
+        <a class="btn primary" href="#projects">View projects</a>
+        <a class="btn" href="https://github.com/ericlmao">GitHub</a>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="section-head" data-fade>
+        <h2>Projects</h2>
+        <p>Minecraft tools, libraries and plugins.</p>
+      </div>
+
+      <div class="grid">
+        <a class="card span-2" href="http://paperkeystool.ericlmao.com/" data-fade>
+          <div class="card-top"><span class="tag">Web tool</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+          <h3>PaperMC Registry Index</h3>
+          <p>Search every Minecraft registry key and tag key, for every version, taken straight from Paper's generated sources.</p>
+        </a>
+        <a class="card" href="https://github.com/moonrise-studios/plugin-engine" data-fade>
+          <div class="card-top"><span class="tag">Library</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+          <h3>plugin-engine</h3>
+          <p>Commands, schedulers, GUIs, toasts and config for Paper, Velocity and BungeeCord.</p>
+        </a>
+        <a class="card" href="https://github.com/moonrise-studios/moss" data-fade>
+          <div class="card-top"><span class="tag">Library</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+          <h3>moss</h3>
+          <p>Spring dependency injection and lifecycle hooks inside a Minecraft plugin.</p>
+        </a>
+        <div class="card" data-fade>
+          <div class="card-top"><span class="tag">Plugin</span><span class="muted-label">Retired</span></div>
+          <h3>Punishments</h3>
+          <p>Bans, mutes and warnings with history. Sold on BuiltByBit.</p>
         </div>
-      </div>
-
-      <figure class="console" data-hero aria-label="Illustration: a Paper server console starting up with Eric's plugins">
-        <div class="console-bar"><span></span><span></span><span></span><b>server console</b></div>
-        <ol class="console-log" id="console-log">
-          <li><time>12:00:01</time> <i>INFO</i> Loading plugins from /plugins</li>
-          <li><time>12:00:01</time> <i>INFO</i> [moss] Scanning com.example.core</li>
-          <li><time>12:00:01</time> <i>INFO</i> [moss] Spring context ready</li>
-          <li><time>12:00:02</time> <i>INFO</i> [plugin-engine] Commands registered</li>
-          <li><time>12:00:02</time> <i>INFO</i> [Punishments] Enabled</li>
-          <li class="ok"><time>12:00:02</time> <i>INFO</i> Done! For help, type "help"</li>
-          <li class="cursor" aria-hidden="true">&gt; <span></span></li>
-        </ol>
-      </figure>
-    </section>
-
-    <section class="block wrap" id="minecraft">
-      <div class="head" data-reveal>
-        <h2><span class="num">01</span> Plugins &amp; libraries</h2>
-        <p>Things other developers build on, and one I sold.</p>
-      </div>
-
-      <div class="tiles">
-        <article class="tile t-registry" data-reveal>
-          <div class="art registry" aria-hidden="true">
-            <div class="reg-search">
-              <span class="reg-icon"></span>
-              <span class="reg-query" id="reg-query">diamond</span>
-              <span class="reg-ver">26.3</span>
-            </div>
-            <ul class="reg-results" id="reg-results">
-              <li><code>minecraft:diamond</code><small>item</small></li>
-              <li><code>minecraft:diamond_sword</code><small>item</small></li>
-              <li><code>minecraft:diamond_ore</code><small>block</small></li>
-              <li><code>#minecraft:diamond_ores</code><small>tag</small></li>
-            </ul>
-          </div>
-          <div class="meta">
-            <p class="kind">Web tool</p>
-            <h3><a href="http://paperkeystool.ericlmao.com/">PaperMC Registry Index</a></h3>
-            <p>Every registry key and tag key, for every Minecraft version, taken from Paper's generated sources.</p>
-          </div>
-        </article>
-
-        <article class="tile t-engine" data-reveal>
-          <div class="art modules" aria-hidden="true">
-            <span class="mod core">common</span>
-            <svg class="wires" viewBox="0 0 300 40" preserveAspectRatio="none"><path d="M150 0V14M50 14H250M50 14V40M150 14V40M250 14V40"/></svg>
-            <div class="mod-row"><span class="mod">paper</span><span class="mod">velocity</span><span class="mod">bungeecord</span></div>
-          </div>
-          <div class="meta">
-            <p class="kind">Library</p>
-            <h3><a href="https://github.com/moonrise-studios/plugin-engine">plugin-engine</a></h3>
-            <p>Commands, schedulers, GUIs, dialogs, toasts and config. One shared core, three platforms.</p>
-          </div>
-        </article>
-
-        <article class="tile t-moss" data-reveal>
-          <pre class="art code" aria-hidden="true"><code><span class="an">@SpringComponent</span>
-<span class="kw">public class</span> <span class="ty">JoinListener</span>
-    <span class="kw">implements</span> <span class="ty">Listener</span>, <span class="ty">Enableable</span> {
-
-  <span class="kw">private final</span> <span class="ty">StatsService</span> stats;
-
-  <span class="ty">JoinListener</span>(<span class="ty">StatsService</span> stats) {
-    <span class="kw">this</span>.stats = stats;
-  }
-}</code></pre>
-          <div class="meta">
-            <p class="kind">Library</p>
-            <h3><a href="https://github.com/moonrise-studios/moss">moss</a></h3>
-            <p>Spring dependency injection inside a plugin. Constructor injection and lifecycle hooks instead of static singletons.</p>
-          </div>
-        </article>
-
-        <article class="tile t-punish" data-reveal>
-          <div class="art chat" aria-hidden="true">
-            <p><b class="c-red">Punishments</b> <span class="c-dim">»</span> Steve was banned by <b>Eric</b> for <b>7d</b>.</p>
-            <p><span class="c-dim">Reason:</span> X-ray</p>
-            <p><b class="c-red">Punishments</b> <span class="c-dim">»</span> Alex was muted for <b>1h</b>.</p>
-          </div>
-          <div class="meta">
-            <p class="kind">Plugin · retired</p>
-            <h3>Punishments</h3>
-            <p>Bans, mutes and warnings with history. I sold it on BuiltByBit.</p>
-          </div>
-        </article>
+        <a class="card" href="https://github.com/RealViewExtension/RealViewExtension" data-fade>
+          <div class="card-top"><span class="tag">Chrome extension</span><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></div>
+          <h3>RealView</h3>
+          <p>Brings back engaged views in YouTube Studio, the old 30-second view count.</p>
+        </a>
       </div>
     </section>
 
-    <section class="block wrap" id="servers">
-      <div class="head" data-reveal>
-        <h2><span class="num">02</span> Servers</h2>
+    <section class="section" id="servers">
+      <div class="section-head" data-fade>
+        <h2>Servers</h2>
         <p>Custom development for other networks, plus a couple of my own.</p>
       </div>
 
-      <div class="chart" data-reveal>
-        <div class="chart-scale" aria-hidden="true"><span>0</span><span>250</span><span>500</span><span>750</span><span>1,000 daily players</span></div>
-        <ul class="servers">
-          <li style="--lo: 100; --hi: 100">
-            <div class="srv-name"><strong>OG-Network</strong><span class="pill live">current</span></div>
-            <div class="bar" role="img" aria-label="100 or more daily active players"><span></span><em>100+</em></div>
-          </li>
-          <li style="--lo: 20; --hi: 20">
-            <div class="srv-name"><strong>SuperSMP</strong><span class="pill live">current · part time</span></div>
-            <div class="bar" role="img" aria-label="20 daily active players"><span></span><em>20</em></div>
-          </li>
-          <li style="--lo: 300; --hi: 1000">
-            <div class="srv-name"><strong>Skycade</strong><span class="pill">shut down</span></div>
-            <div class="bar" role="img" aria-label="300 to 1,000 daily active players while Eric was a developer there"><span></span><em>300–1,000</em></div>
-            <p class="srv-note">While I was on the dev team</p>
-          </li>
-          <li style="--lo: 20; --hi: 30">
-            <div class="srv-name"><strong>SoupPvP</strong><span class="pill">shut down</span></div>
-            <div class="bar" role="img" aria-label="20 to 30 daily active players"><span></span><em>20–30</em></div>
-            <p class="srv-note">Owner and sole developer</p>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="block wrap" id="other">
-      <div class="head" data-reveal>
-        <h2><span class="num">03</span> Outside Minecraft</h2>
-      </div>
-
-      <article class="tile wide t-realview" data-reveal>
-        <div class="art studio" aria-hidden="true">
-          <div class="studio-card">
-            <p class="studio-label"><s>Views</s> <b>Engaged views</b></p>
-            <svg viewBox="0 0 320 90" class="studio-graph">
-              <path class="area" d="M0 78 C30 70 50 74 80 60 S130 40 160 46 S220 22 250 28 S300 10 320 12 V90 H0Z"/>
-              <path class="line" d="M0 78 C30 70 50 74 80 60 S130 40 160 46 S220 22 250 28 S300 10 320 12"/>
-            </svg>
-          </div>
+      <div class="grid servers">
+        <div class="card stat" data-fade>
+          <div class="card-top"><span class="status live">Current</span></div>
+          <h3>OG-Network</h3>
+          <p class="num">100+</p>
+          <p class="num-label">daily active players</p>
         </div>
-        <div class="meta">
-          <p class="kind">Chrome extension</p>
-          <h3><a href="https://github.com/RealViewExtension/RealViewExtension">RealView</a></h3>
-          <p>YouTube Studio now counts a view the moment playback starts. RealView puts the older number back: engaged views, counted after about 30 seconds.</p>
+        <div class="card stat" data-fade>
+          <div class="card-top"><span class="status live">Current · part time</span></div>
+          <h3>SuperSMP</h3>
+          <p class="num">20</p>
+          <p class="num-label">daily active players</p>
         </div>
-      </article>
+        <div class="card stat" data-fade>
+          <div class="card-top"><span class="status">Shut down</span></div>
+          <h3>Skycade</h3>
+          <p class="num">300–1,000</p>
+          <p class="num-label">daily active players while I was a developer</p>
+        </div>
+        <div class="card stat" data-fade>
+          <div class="card-top"><span class="status">Shut down</span></div>
+          <h3>SoupPvP</h3>
+          <p class="num">20–30</p>
+          <p class="num-label">daily active players, as owner and sole developer</p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="foot wrap">
-    <p>Eric, Canada</p>
-    <a href="https://github.com/ericlmao">GitHub ↗</a>
+  <footer class="footer">
+    <span>© <span id="year">2026</span> Eric</span>
+    <a href="https://github.com/ericlmao">github.com/ericlmao</a>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>

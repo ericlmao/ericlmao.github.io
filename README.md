@@ -2,13 +2,13 @@
 
 Personal site, served by GitHub Pages at https://ericlmao.github.io.
 
-Plain HTML, CSS and JavaScript. No build step. Motion uses GSAP from cdnjs.
+Plain HTML, CSS and JavaScript. No build step and no dependencies.
 
 ## Files
 
-- `index.html`: page content. Each project is an `article.tile` with a visual mock and a short description.
+- `index.html`: page content. Projects and servers are `.card` elements in a grid.
 - `style.css`: styles.
-- `script.js`: registry search demo and scroll animations. Respects reduced motion.
+- `script.js`: scroll fade-ins and the card hover spotlight. Respects reduced motion.
 - `favicon.svg`: site icon.
 - `.nojekyll`: tells GitHub Pages to serve files as-is.
 
