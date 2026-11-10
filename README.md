@@ -2,7 +2,7 @@
 
 Personal site, served by GitHub Pages at https://ericlmao.github.io.
 
-Plain HTML and CSS. No build step, no JavaScript.
+Plain HTML and CSS, plus `type.js` for the typing intro. No build step.
 
 ## Files
 
