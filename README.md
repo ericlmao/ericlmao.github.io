@@ -6,7 +6,7 @@ Plain HTML and CSS, plus `type.js` for the typing intro. No build step.
 
 ## Files
 
-- `index.html`: page content. Projects and servers are list rows with an icon, a name, a one-line description and a label.
+- `index.html`: page content. Projects and servers are foldable `<details>` groups; each item is a row with an icon, name, description and label.
 - `style.css`: styles.
 - `icons/`: avatar, project logos and server icons. OG-Network and SuperSMP icons are the server-list icons from their live servers, Skycade is its 2017 site favicon from the Internet Archive, the rest are GitHub organization avatars.
 - `.nojekyll`: tells GitHub Pages to serve files as-is.
