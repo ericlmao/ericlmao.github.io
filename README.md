@@ -2,12 +2,13 @@
 
 Personal site, served by GitHub Pages at https://ericlmao.github.io.
 
-Plain HTML and CSS. No build step, no JavaScript.
+Plain HTML, CSS and JavaScript. No build step. Motion uses GSAP from cdnjs.
 
 ## Files
 
 - `index.html`: page content. Projects are plain list items, grouped by section.
-- `style.css`: styles, with light and dark themes that follow the system setting.
+- `style.css`: styles.
+- `script.js`: registry search demo and scroll animations. Respects reduced motion.
 - `favicon.svg`: site icon.
 - `.nojekyll`: tells GitHub Pages to serve files as-is.
 
