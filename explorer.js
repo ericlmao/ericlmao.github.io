@@ -5,7 +5,8 @@
   root.classList.add("js");
 
   const stage = document.querySelector(".stage");
-  const tabs = [...document.querySelectorAll(".tab")];
+  const tabsEl = document.querySelector(".tabs");
+  const tabs = [...tabsEl.querySelectorAll(".tab")];
   const caption = document.querySelector(".caption");
   const capName = caption.querySelector(".cap-name");
   const capMeta = caption.querySelector(".cap-meta");
@@ -32,6 +33,8 @@
         document.getElementById(tab.getAttribute("aria-controls")).classList.toggle("open", on);
       }
       stage.classList.toggle("has-open", Boolean(section));
+      if (section) tabsEl.dataset.active = section;
+      else delete tabsEl.dataset.active;
     });
   }
 

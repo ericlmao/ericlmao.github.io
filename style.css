@@ -42,30 +42,40 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
 /* Explorer: two tabs, an idle icon marquee, and one panel at a time */
 .explorer { margin-top: 48px; }
 
-.tabs { display: flex; gap: 8px; }
+.tabs {
+  position: relative; display: grid; grid-template-columns: 1fr 1fr;
+  padding: 4px; border-radius: 12px;
+  background: #111; border: 1px solid var(--line);
+}
+.indicator {
+  position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px);
+  border-radius: 8px; background: #1e1e1e;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.5);
+  opacity: 0; transform: translateX(0);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s;
+}
+.tabs[data-active="projects"] .indicator { opacity: 1; transform: translateX(0); }
+.tabs[data-active="servers"] .indicator { opacity: 1; transform: translateX(100%); }
+
 .tab {
-  display: inline-flex; align-items: center; gap: 8px;
-  height: 38px; padding: 0 12px 0 14px;
-  font: inherit; font-size: 14px; font-weight: 500; color: var(--muted);
-  background: #0f0f0f; border: 1px solid var(--line); border-radius: 10px;
-  cursor: pointer;
-  transition: color 0.15s, background-color 0.15s, border-color 0.15s;
+  position: relative; z-index: 1;
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  height: 34px; padding: 0 12px;
+  font: inherit; font-size: 14px; font-weight: 500; color: var(--faint);
+  background: none; border: 0; border-radius: 8px; cursor: pointer;
+  transition: color 0.15s;
 }
-.tab:hover { color: var(--text); border-color: #2a2a2a; }
-.tab[aria-expanded="true"] { color: var(--text); background: #161616; border-color: #333; }
+.tab:hover { color: var(--muted); }
+.tab[aria-expanded="true"] { color: var(--text); }
+.tab:focus-visible { outline-offset: -2px; }
 .count {
-  font-size: 11px; line-height: 1; color: var(--muted);
-  padding: 3px 6px; border-radius: 99px; background: #1c1c1c;
+  font-size: 12px; line-height: 1; color: var(--faint);
+  font-variant-numeric: tabular-nums; transition: color 0.15s;
 }
-.chev {
-  fill: none; stroke: var(--faint); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
-  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), stroke 0.15s;
-}
-.tab:hover .chev { stroke: var(--text); }
-.tab[aria-expanded="true"] .chev { transform: rotate(180deg); stroke: var(--text); }
+.tab[aria-expanded="true"] .count { color: var(--muted); }
 
 .stage {
-  position: relative; margin-top: 12px;
+  position: relative; margin-top: 10px;
   transition: height 0.32s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
