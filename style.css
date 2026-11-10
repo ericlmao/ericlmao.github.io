@@ -82,3 +82,19 @@ a.row:hover { background: var(--hover); }
 }
 .caret.busy { animation: none; }
 @keyframes caret-blink { 50% { opacity: 0; } }
+
+/* Linked row with a soft green glow (OG-Network) */
+.role { font-size: 14px; color: var(--text); opacity: 0.85; }
+.row.glow { transition: background-color 0.2s, box-shadow 0.2s; }
+.row.glow:hover {
+  background: rgba(63, 185, 80, 0.06);
+  box-shadow: 0 0 0 1px rgba(63, 185, 80, 0.35), 0 0 28px -4px rgba(63, 185, 80, 0.35);
+}
+.row.glow:hover .icon { box-shadow: 0 0 16px rgba(63, 185, 80, 0.45); }
+.out {
+  fill: none; stroke: var(--faint); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  vertical-align: -1px; margin-left: 2px; opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.row.glow:hover .out { opacity: 1; stroke: var(--text); transform: translate(1px, -1px); }
+@media (hover: none) { .out { opacity: 1; } }
