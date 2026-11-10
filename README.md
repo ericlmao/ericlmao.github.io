@@ -6,7 +6,7 @@ Plain HTML, CSS and JavaScript. No build step. Motion uses GSAP from cdnjs.
 
 ## Files
 
-- `index.html`: page content. Projects are plain list items, grouped by section.
+- `index.html`: page content. Each project is an `article.tile` with a visual mock and a short description.
 - `style.css`: styles.
 - `script.js`: registry search demo and scroll animations. Respects reduced motion.
 - `favicon.svg`: site icon.
