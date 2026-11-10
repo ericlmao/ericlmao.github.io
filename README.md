@@ -19,4 +19,7 @@ Open `index.html` in a browser.
 
 ## Deploy
 
+When you change `style.css` or a script, bump the `?v=` number on its tag in `index.html`. GitHub Pages lets browsers cache files for 10 minutes, so without the bump a visitor can get the new HTML with the old CSS.
+
+
 Push to `main`. GitHub Pages publishes from the root of the `main` branch.
