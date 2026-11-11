@@ -43,12 +43,12 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
 .explorer { margin-top: 48px; }
 
 .tabs {
-  position: relative; display: grid; grid-template-columns: repeat(3, 1fr);
+  position: relative; display: grid; grid-template-columns: 1fr 1fr;
   padding: 4px; border-radius: 12px;
   background: #111; border: 1px solid var(--line);
 }
 .indicator {
-  position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc((100% - 8px) / 3);
+  position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px);
   border-radius: 8px; background: #1e1e1e;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.5);
   opacity: 0; transform: translateX(0);
@@ -56,7 +56,6 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
 }
 .tabs[data-active="projects"] .indicator { opacity: 1; transform: translateX(0); }
 .tabs[data-active="servers"] .indicator { opacity: 1; transform: translateX(100%); }
-.tabs[data-active="ai"] .indicator { opacity: 1; transform: translateX(200%); }
 
 .tab {
   position: relative; z-index: 1;
@@ -137,7 +136,7 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
   .track .chip[aria-hidden="true"] { display: none; }
   .marquee { -webkit-mask-image: none; mask-image: none; }
   .js .panel.open { animation: none; }
-  .stage { transition: none; }
+  .stage, .ai-stage { transition: none; }
 }
 
 .list { list-style: none; margin: 0; padding: 0; }
@@ -166,7 +165,19 @@ a.row:hover { background: #1a1a1a; }
 .meta.live { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
 .meta.live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
 
-/* How I use AI panel */
+/* How I use AI: its own dropdown under the explorer */
+.ai { margin-top: 12px; }
+.tabs.single { grid-template-columns: 1fr; }
+.tabs.single .indicator { width: calc(100% - 8px); }
+.tabs.single[data-active] .indicator { opacity: 1; transform: none; }
+.chev {
+  fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.tab[aria-expanded="true"] .chev { transform: rotate(180deg); }
+.ai-stage { display: flow-root; transition: height 0.32s cubic-bezier(0.22, 1, 0.36, 1); }
+.ai .panel.open { margin-top: 10px; }
+.no-js .ai .panel { margin-top: 10px; }
 .lead { margin: 0; padding: 10px 10px 6px; color: var(--muted); font-size: 14px; }
 .row.top { align-items: flex-start; }
 .row.top .icon { margin-top: 2px; }

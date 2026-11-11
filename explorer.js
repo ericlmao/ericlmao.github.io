@@ -5,7 +5,7 @@
   root.classList.add("js");
 
   const stage = document.querySelector(".stage");
-  const tabsEl = document.querySelector(".tabs");
+  const tabsEl = document.querySelector(".explorer .tabs");
   const tabs = [...tabsEl.querySelectorAll(".tab")];
   const caption = document.querySelector(".caption");
   const capName = caption.querySelector(".cap-name");
@@ -13,7 +13,7 @@
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   // Animate the stage height between the marquee and a panel.
-  function withHeightTransition(change) {
+  function withHeightTransition(change, stage = document.querySelector(".stage")) {
     if (reduce) return change();
     const from = stage.offsetHeight;
     change();
@@ -71,4 +71,18 @@
       }
     });
   }
+
+  // "How I use AI": a separate dropdown under the explorer.
+  const aiTabs = document.querySelector(".ai .tabs");
+  const aiTab = aiTabs.querySelector(".tab");
+  const aiPanel = document.getElementById(aiTab.getAttribute("aria-controls"));
+  aiTab.addEventListener("click", () => {
+    const on = aiTab.getAttribute("aria-expanded") !== "true";
+    withHeightTransition(() => {
+      aiTab.setAttribute("aria-expanded", String(on));
+      aiPanel.classList.toggle("open", on);
+      if (on) aiTabs.dataset.active = "ai";
+      else delete aiTabs.dataset.active;
+    }, document.querySelector(".ai-stage"));
+  });
 })();
