@@ -171,6 +171,7 @@ a.row:hover { background: #1a1a1a; }
 
 /* Typing intro */
 .typing { min-height: 1.5em; }
+.type-pending [data-type] { visibility: hidden; }
 .caret {
   display: inline-block; width: 2px; height: 1em; margin-left: 2px;
   background: currentColor; vertical-align: -0.12em;

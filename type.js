@@ -5,7 +5,7 @@
   if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
   const lines = [...document.querySelectorAll("[data-type]")];
-  if (!lines.length) return;
+  if (!lines.length) return document.documentElement.classList.remove("type-pending");
 
   const caret = document.createElement("span");
   caret.className = "caret";
@@ -20,6 +20,7 @@
     el.classList.add("typing");
     return { el, out, text };
   });
+  document.documentElement.classList.remove("type-pending");
 
   const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
