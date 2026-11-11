@@ -40,7 +40,10 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
 .link:hover { color: var(--text); }
 
 /* Explorer: two tabs, an idle icon marquee, and one panel at a time */
-.explorer { margin-top: 48px; }
+.section-label {
+  margin: 48px 0 12px; font-size: 13px; font-weight: 500; color: var(--faint);
+}
+.explorer { margin-top: 0; }
 
 .tabs {
   position: relative; display: grid; grid-template-columns: 1fr 1fr;
@@ -228,7 +231,8 @@ button.row:hover { background: #1a1a1a; }
 .meta.live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
 
 /* How I use AI: its own dropdown under the explorer */
-.ai { margin-top: 12px; }
+.ai { margin-top: 0; }
+.ai .section-label { margin-top: 40px; }
 .tabs.single { grid-template-columns: 1fr; }
 .tabs.single .indicator { width: calc(100% - 8px); }
 .tabs.single[data-active] .indicator { opacity: 1; transform: none; }
