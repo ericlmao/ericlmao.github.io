@@ -54,8 +54,9 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
   opacity: 0; transform: translateX(0);
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s;
 }
-.tabs[data-active="projects"] .indicator { opacity: 1; transform: translateX(0); }
-.tabs[data-active="servers"] .indicator { opacity: 1; transform: translateX(100%); }
+/* data-active remembers the position, data-open shows it, so closing only fades in place */
+.tabs[data-active="servers"] .indicator { transform: translateX(100%); }
+.tabs[data-open] .indicator { opacity: 1; }
 
 .tab {
   position: relative; z-index: 1;
@@ -135,10 +136,21 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
 }
 .js .panel { display: none; }
 .js .panel.open { display: block; animation: panel-in 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
+
+/* Projects and Servers share one box: switching sections only resizes it and fades the content */
+.panels {
+  border: 1px solid #2a2a2a; border-radius: 14px; background: #111; padding: 6px;
+  transition: height 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.panels .panel { border: 0; border-radius: 0; background: none; padding: 0; }
+.js .panels { display: none; }
+.js .stage.has-open .panels { display: block; animation: panel-in 0.3s cubic-bezier(0.22, 1, 0.36, 1); }
+.js .panels .panel.open { animation: panel-fade 0.25s ease-out; }
 .js .stage.has-open .idle { display: none; }
 .no-js .idle { display: none; }
-.no-js .panel + .panel { margin-top: 10px; }
+.no-js .panels .panel + .panel { margin-top: 6px; padding-top: 6px; border-top: 1px solid var(--line); }
 @keyframes panel-in { from { opacity: 0; transform: translateY(-6px); } }
+@keyframes panel-fade { from { opacity: 0; } }
 
 .list li.flash .row { animation: flash 1.2s ease-out; }
 @keyframes flash { 0%, 30% { background: rgba(255, 255, 255, 0.08); } 100% { background: transparent; } }
@@ -147,8 +159,8 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
   .track { animation: none; flex-wrap: wrap; width: auto; justify-content: center; }
   .track .chip[aria-hidden="true"] { display: none; }
   .marquee { -webkit-mask-image: none; mask-image: none; }
-  .js .panel.open { animation: none; }
-  .stage, .ai-stage, .js .detail, .js .detail.open { transition: none; }
+  .js .panel.open, .js .stage.has-open .panels, .js .panels .panel.open { animation: none; }
+  .stage, .ai-stage, .panels, .js .detail, .js .detail.open { transition: none; }
 }
 
 .list { list-style: none; margin: 0; padding: 0; }

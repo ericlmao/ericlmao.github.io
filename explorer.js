@@ -7,30 +7,41 @@
   const stage = document.querySelector(".stage");
   const tabsEl = document.querySelector(".explorer .tabs");
   const tabs = [...tabsEl.querySelectorAll(".tab")];
+  const indicator = tabsEl.querySelector(".indicator");
   const caption = document.querySelector(".caption");
   const capName = caption.querySelector(".cap-name");
   const capMeta = caption.querySelector(".cap-meta");
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Animate the stage height between the marquee and a panel.
-  function withHeightTransition(change, stage = document.querySelector(".stage")) {
+  // Run `change` and animate `el` from its old height to its new one.
+  // Safe to call again mid-animation: it picks up from the current height.
+  function withHeightTransition(change, el = stage) {
     if (reduce) return change();
-    const from = stage.offsetHeight;
+    const from = el.offsetHeight;
+    if (el._heightDone) el.removeEventListener("transitionend", el._heightDone);
+    el.style.height = "";
     change();
-    const to = stage.offsetHeight;
-    if (from === to) return;
-    stage.style.height = `${from}px`;
-    stage.offsetHeight; // force layout so the transition starts from `from`
-    stage.style.height = `${to}px`;
-    const done = (e) => {
-      if (e.target !== stage) return;
-      stage.style.height = "";
-      stage.removeEventListener("transitionend", done);
+    const to = el.offsetHeight;
+    if (from === to) { el.style.overflow = ""; return; }
+    el.style.height = `${from}px`;
+    el.style.overflow = "hidden";
+    el.offsetHeight; // force layout so the transition starts from `from`
+    el.style.height = `${to}px`;
+    el._heightDone = (e) => {
+      if (e.target !== el || e.propertyName !== "height") return;
+      el.style.height = "";
+      el.style.overflow = "";
+      el.removeEventListener("transitionend", el._heightDone);
+      el._heightDone = null;
     };
-    stage.addEventListener("transitionend", done);
+    el.addEventListener("transitionend", el._heightDone);
   }
 
+  const panels = document.querySelector(".panels");
+
   function open(section) {
+    // Switching between sections resizes the shared box; opening or closing resizes the stage.
+    const switching = section && "open" in tabsEl.dataset;
     withHeightTransition(() => {
       for (const tab of tabs) {
         const on = tab.dataset.section === section;
@@ -38,9 +49,21 @@
         document.getElementById(tab.getAttribute("aria-controls")).classList.toggle("open", on);
       }
       stage.classList.toggle("has-open", Boolean(section));
-      if (section) tabsEl.dataset.active = section;
-      else delete tabsEl.dataset.active;
-    });
+      if (section) {
+        // Opening from closed: jump the highlight to its spot first, then fade it in.
+        if (!("open" in tabsEl.dataset)) {
+          indicator.style.transition = "none";
+          tabsEl.dataset.active = section;
+          indicator.offsetWidth;
+          indicator.style.transition = "";
+        }
+        tabsEl.dataset.active = section;
+        tabsEl.dataset.open = "";
+      } else {
+        // Closing: keep the position and only fade out, so it never slides across.
+        delete tabsEl.dataset.open;
+      }
+    }, switching ? panels : stage);
   }
 
   for (const tab of tabs) {
