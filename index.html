@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=10">
   <script>document.documentElement.className = "js" + (matchMedia("(prefers-reduced-motion: reduce)").matches ? "" : " type-pending");</script>
 </head>
 <body>
@@ -66,70 +66,158 @@
       <div class="panel" id="panel-projects" role="region" aria-label="Projects">
         <ul class="list">
           <li id="item-registry">
-            <a class="row" href="http://paperkeystool.ericlmao.com/">
+            <button class="row" type="button" aria-expanded="false" aria-controls="detail-registry">
               <img class="icon" src="icons/papermc.png" alt="" width="32" height="32">
-              <span class="text"><span class="name">PaperMC Registry Index<svg class="out" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="desc">Every registry and tag key for each Minecraft version.</span></span>
+              <span class="text"><span class="name">PaperMC Registry Index</span><span class="desc">Every registry and tag key for each Minecraft version.</span></span>
               <span class="meta">Web tool</span>
-            </a>
+              <span class="plus" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+            </button>
+            <div class="detail" id="detail-registry">
+              <div class="detail-clip">
+                <div class="detail-body">
+                  <p>A searchable site listing every registry key and tag key for each Minecraft version, pulled straight from Paper's generated key classes.</p>
+                  <p>Pick a version and a registry, search across all of them at once, click a key to copy it, or open a tag to see what it contains.</p>
+                  <div class="links"><a class="btn" href="http://paperkeystool.ericlmao.com/" target="_blank" rel="noopener">Open site<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="btn" href="https://github.com/ericlmao/PaperMC-Registry-Tool" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+                </div>
+              </div>
+            </div>
           </li>
           <li id="item-engine">
-            <a class="row" href="https://github.com/moonrise-studios/plugin-engine">
+            <button class="row" type="button" aria-expanded="false" aria-controls="detail-engine">
               <img class="icon" src="icons/moonrise.png" alt="" width="32" height="32">
-              <span class="text"><span class="name">plugin-engine<svg class="out" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="desc">Building blocks for Paper, Velocity and BungeeCord plugins.</span></span>
+              <span class="text"><span class="name">plugin-engine</span><span class="desc">Building blocks for Paper, Velocity and BungeeCord plugins.</span></span>
               <span class="meta">Library</span>
-            </a>
+              <span class="plus" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+            </button>
+            <div class="detail" id="detail-engine">
+              <div class="detail-clip">
+                <div class="detail-body">
+                  <p>A Java 21 library of reusable building blocks for Paper, Velocity and BungeeCord plugins: commands, scheduling, GUIs, dialogs, messaging and configuration.</p>
+                  <p>It also sends toasts that reach Bedrock players through Geyser, falling back to the Java path when a server can't.</p>
+                  <div class="links"><a class="btn" href="https://github.com/moonrise-studios/plugin-engine" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+                </div>
+              </div>
+            </div>
           </li>
           <li id="item-moss">
-            <a class="row" href="https://github.com/moonrise-studios/moss">
+            <button class="row" type="button" aria-expanded="false" aria-controls="detail-moss">
               <img class="icon" src="icons/moonrise.png" alt="" width="32" height="32">
-              <span class="text"><span class="name">moss<svg class="out" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="desc">Spring dependency injection for Minecraft plugins.</span></span>
+              <span class="text"><span class="name">moss</span><span class="desc">Spring dependency injection for Minecraft plugins.</span></span>
               <span class="meta">Library</span>
-            </a>
+              <span class="plus" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+            </button>
+            <div class="detail" id="detail-moss">
+              <div class="detail-clip">
+                <div class="detail-body">
+                  <p>Embeds a Spring application context inside a Minecraft plugin, so listeners, services and commands use constructor injection instead of static singletons and huge main classes.</p>
+                  <p>It adds lifecycle hooks for load, enable, reload and disable, and ships example plugins for Paper, Velocity and BungeeCord.</p>
+                  <div class="links"><a class="btn" href="https://github.com/moonrise-studios/moss" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+                </div>
+              </div>
+            </div>
           </li>
           <li id="item-punishments">
-            <div class="row">
+            <button class="row" type="button" aria-expanded="false" aria-controls="detail-punishments">
               <span class="icon icon-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="m14.5 12.5-8 8a2.12 2.12 0 1 1-3-3l8-8M16 16l6-6M8 8l6-6M9 7l8 8M21 11l-8-8"/></svg></span>
               <span class="text"><span class="name">Punishments</span><span class="desc">A LiteBans extension adding GUIs, structured punishments and more.</span></span>
               <span class="meta">Plugin</span>
+              <span class="plus" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+            </button>
+            <div class="detail" id="detail-punishments">
+              <div class="detail-clip">
+                <div class="detail-body">
+                  <ul class="tags"><li>~65 sales on BuiltByBit</li><li>Unlisted</li></ul>
+                  <p>My most popular plugin by far. It added the things I wanted on top of LiteBans: GUI interactions and, more importantly, structured punishments.</p>
+                  <p>LiteBans later added structured punishments as an official feature called templates, which left little reason to keep maintaining it. GUI interactions alone weren't much of a selling point, so I unlisted it and no longer sell it.</p>
+                  <p>It stayed public for several years after I stopped working on it. I built it under my no-NMS rule, so it never needed upkeep, and it still works today on 26.3.</p>
+                </div>
+              </div>
             </div>
           </li>
           <li id="item-realview">
-            <a class="row" href="https://github.com/RealViewExtension/RealViewExtension">
+            <button class="row" type="button" aria-expanded="false" aria-controls="detail-realview">
               <img class="icon" src="icons/realview.png" alt="" width="32" height="32">
-              <span class="text"><span class="name">RealView<svg class="out" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="desc">Shows engaged views in YouTube Studio again.</span></span>
+              <span class="text"><span class="name">RealView</span><span class="desc">Shows engaged views in YouTube Studio again.</span></span>
               <span class="meta">Extension</span>
-            </a>
+              <span class="plus" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+            </button>
+            <div class="detail" id="detail-realview">
+              <div class="detail-clip">
+                <div class="detail-body">
+                  <p>A Chrome extension that makes YouTube Studio show engaged views, the older count that only includes people who watched for about 30 seconds, everywhere it normally shows Views.</p>
+                  <p>It also colours the analytics graphs red, and every part of it can be switched off from the toolbar popup.</p>
+                  <div class="links"><a class="btn" href="https://chromewebstore.google.com/detail/realview-engaged-views-fo/nagdbmdfcaofcfgmaflmflbcbbfdddjo" target="_blank" rel="noopener">Chrome Web Store<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a><a class="btn" href="https://github.com/RealViewExtension/RealViewExtension" target="_blank" rel="noopener">GitHub<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+                </div>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
       <div class="panel" id="panel-servers" role="region" aria-label="Servers">
         <ul class="list">
           <li id="item-og">
-            <a class="row glow" href="https://www.og-network.net/members/negativekb.9079/#recent-content">
+            <button class="row glow" type="button" aria-expanded="false" aria-controls="detail-og">
               <img class="icon pixel" src="icons/og-network.png" alt="" width="32" height="32">
-              <span class="text"><span class="name">OG-Network<svg class="out" viewBox="0 0 24 24" width="13" height="13" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span><span class="role">Development Manager, RPG-SMP Manager</span><span class="desc">100+ daily players</span></span>
-              <span class="meta live">Current</span>
-            </a>
-          </li>
-          <li id="item-supersmp">
-            <div class="row">
-              <img class="icon pixel" src="icons/supersmp.png" alt="" width="32" height="32">
-              <span class="text"><span class="name">SuperSMP</span><span class="desc">20 daily players · part time</span></span>
-              <span class="meta live">Current</span>
+              <span class="text"><span class="name">OG-Network</span><span class="desc">100+ daily players</span></span>
+              <span class="meta live">2024 – Present</span>
+              <span class="plus" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+            </button>
+            <div class="detail" id="detail-og">
+              <div class="detail-clip">
+                <div class="detail-body">
+                  <ul class="tags" aria-label="Roles"><li>Development Manager</li><li>RPG-SMP Manager</li></ul>
+                  <p>I work as the Development Manager and RPG-SMP Manager, which takes a wide set of skills: software engineering, software architecture, database management, project management, game design and more.</p>
+                  <p>I lead internal projects that completely overhauled our process and quality standards, including a move to mono-repos built with the help of AI. Across them we maintain over 1.5 million lines of code.</p>
+                  <div class="links"><a class="btn" href="https://www.og-network.net/members/negativekb.9079/#recent-content" target="_blank" rel="noopener">Forum profile<svg viewBox="0 0 24 24" width="12" height="12" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a></div>
+                </div>
+              </div>
             </div>
           </li>
-          <li id="item-skycade">
-            <div class="row">
-              <img class="icon" src="icons/skycade.png" alt="" width="32" height="32">
-              <span class="text"><span class="name">Skycade</span><span class="desc">300 to 1,000 daily players while I was a developer</span></span>
-              <span class="meta">Closed</span>
+          <li id="item-supersmp">
+            <button class="row" type="button" aria-expanded="false" aria-controls="detail-supersmp">
+              <img class="icon pixel" src="icons/supersmp.png" alt="" width="32" height="32">
+              <span class="text"><span class="name">SuperSMP</span><span class="desc">20 daily players · part time</span></span>
+              <span class="meta live">2025 – Present</span>
+              <span class="plus" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+            </button>
+            <div class="detail" id="detail-supersmp">
+              <div class="detail-clip">
+                <div class="detail-body">
+                  <p>My work here is fairly light. I've developed several plugins for the server, and I help in other ways too: consulting, performance auditing and software development.</p>
+                </div>
+              </div>
             </div>
           </li>
           <li id="item-souppvp">
-            <div class="row">
+            <button class="row" type="button" aria-expanded="false" aria-controls="detail-souppvp">
               <img class="icon" src="icons/souppvp.png" alt="" width="32" height="32">
               <span class="text"><span class="name">SoupPvP</span><span class="desc">20 to 30 daily players · owner and sole developer</span></span>
-              <span class="meta">Closed</span>
+              <span class="meta">2023</span>
+              <span class="plus" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+            </button>
+            <div class="detail" id="detail-souppvp">
+              <div class="detail-clip">
+                <div class="detail-body">
+                  <p>A passion project, built with help from the small community I was in touch with. It was a community-driven PvP server.</p>
+                  <p>It was also my last project on 1.8 before I moved to modern versions of the game for good.</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li id="item-skycade">
+            <button class="row" type="button" aria-expanded="false" aria-controls="detail-skycade">
+              <img class="icon" src="icons/skycade.png" alt="" width="32" height="32">
+              <span class="text"><span class="name">Skycade</span><span class="desc">300 to 1,000 daily players while I was a developer</span></span>
+              <span class="meta">2020 – 2022</span>
+              <span class="plus" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M6 1.5v9M1.5 6h9"/></svg></span>
+            </button>
+            <div class="detail" id="detail-skycade">
+              <div class="detail-clip">
+                <div class="detail-body">
+                  <p>Well before AI, this is where I got my start professionally. My code from back then is admittedly pretty bad.</p>
+                  <p>It gave me real experience building player-facing changes, and taught me what works and what doesn't.</p>
+                </div>
+              </div>
             </div>
           </li>
         </ul>
@@ -169,7 +257,7 @@
       </div>
     </section>
   </main>
-  <script src="type.js?v=9"></script>
-  <script src="explorer.js?v=9"></script>
+  <script src="type.js?v=10"></script>
+  <script src="explorer.js?v=10"></script>
 </body>
 </html>

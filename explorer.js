@@ -22,7 +22,12 @@
     stage.style.height = `${from}px`;
     stage.offsetHeight; // force layout so the transition starts from `from`
     stage.style.height = `${to}px`;
-    stage.addEventListener("transitionend", () => { stage.style.height = ""; }, { once: true });
+    const done = (e) => {
+      if (e.target !== stage) return;
+      stage.style.height = "";
+      stage.removeEventListener("transitionend", done);
+    };
+    stage.addEventListener("transitionend", done);
   }
 
   function open(section) {
@@ -49,6 +54,22 @@
     if (e.key === "Escape" && stage.classList.contains("has-open")) open(null);
   });
 
+  // Items inside a panel: one open at a time per list.
+  function setItem(row, on) {
+    row.setAttribute("aria-expanded", String(on));
+    row.parentElement.classList.toggle("open", on);
+    document.getElementById(row.getAttribute("aria-controls")).classList.toggle("open", on);
+  }
+  function toggleItem(row, on) {
+    for (const other of row.closest(".list").querySelectorAll("button.row")) {
+      if (other !== row && other.getAttribute("aria-expanded") === "true") setItem(other, false);
+    }
+    setItem(row, on);
+  }
+  for (const row of document.querySelectorAll(".explorer button.row")) {
+    row.addEventListener("click", () => toggleItem(row, row.getAttribute("aria-expanded") !== "true"));
+  }
+
   // Marquee chips: show a caption on hover, open the item's section on click.
   for (const chip of document.querySelectorAll(".chip")) {
     const show = () => {
@@ -62,8 +83,17 @@
     chip.addEventListener("blur", () => caption.classList.remove("show"));
     chip.addEventListener("click", () => {
       caption.classList.remove("show");
-      open(chip.dataset.section);
       const li = document.getElementById(`item-${chip.dataset.item}`);
+      const row = li && li.querySelector("button.row");
+      if (row) {
+        // Expand the item instantly so the panel opens at its final height.
+        const detail = document.getElementById(row.getAttribute("aria-controls"));
+        detail.style.transition = "none";
+        toggleItem(row, true);
+        detail.offsetHeight;
+        detail.style.transition = "";
+      }
+      open(chip.dataset.section);
       if (li) {
         li.classList.remove("flash");
         void li.offsetWidth;

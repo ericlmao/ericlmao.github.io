@@ -76,7 +76,7 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
 }
 .plus svg { fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; }
 .tab:hover .plus { border-color: #444; color: var(--text); background: rgba(255, 255, 255, 0.05); }
-.tab[aria-expanded="true"] .plus { transform: rotate(45deg); border-color: #3a3a3a; color: var(--text); }
+[aria-expanded="true"] > .plus { transform: rotate(45deg); border-color: #3a3a3a; color: var(--text); }
 @media (prefers-reduced-motion: reduce) { .plus { transition: none; } }
 .tab[aria-expanded="true"] { color: var(--text); }
 .tab:focus-visible { outline-offset: -2px; }
@@ -148,7 +148,7 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
   .track .chip[aria-hidden="true"] { display: none; }
   .marquee { -webkit-mask-image: none; mask-image: none; }
   .js .panel.open { animation: none; }
-  .stage, .ai-stage { transition: none; }
+  .stage, .ai-stage, .js .detail, .js .detail.open { transition: none; }
 }
 
 .list { list-style: none; margin: 0; padding: 0; }
@@ -158,7 +158,45 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
   padding: 10px; border-radius: 10px;
   transition: background-color 0.15s;
 }
-a.row:hover { background: #1a1a1a; }
+button.row {
+  width: 100%; font: inherit; color: inherit; text-align: left;
+  background: none; border: 0; cursor: pointer;
+}
+button.row:hover { background: #1a1a1a; }
+.list > li { border-radius: 10px; transition: background-color 0.2s; }
+.list > li.open { background: #161616; }
+.list > li.open > .row:hover { background: none; }
+.row .plus { flex: none; }
+.row:hover .plus { border-color: #444; color: var(--text); background: rgba(255, 255, 255, 0.05); }
+
+/* Item details: collapsed by default when JS runs */
+.detail { display: grid; grid-template-rows: 1fr; }
+.js .detail {
+  grid-template-rows: 0fr; visibility: hidden;
+  transition: grid-template-rows 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s 0.3s;
+}
+.js .detail.open {
+  grid-template-rows: 1fr; visibility: visible;
+  transition: grid-template-rows 0.3s cubic-bezier(0.22, 1, 0.36, 1), visibility 0s;
+}
+.detail-clip { min-height: 0; overflow: hidden; }
+.detail-body { padding: 0 12px 14px 54px; font-size: 13px; color: var(--muted); }
+.detail-body p { margin: 0 0 8px; }
+.detail-body p:last-child { margin-bottom: 0; }
+.tags { list-style: none; margin: 2px 0 10px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.tags li {
+  font-size: 12px; line-height: 1; color: var(--text); padding: 6px 9px;
+  border-radius: 999px; background: #1f1f1f; border: 1px solid #2a2a2a;
+}
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 5px; height: 28px; padding: 0 10px;
+  border-radius: 8px; font-size: 12px; font-weight: 500; color: var(--text);
+  background: #1f1f1f; border: 1px solid #2a2a2a;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+.btn:hover { background: #262626; border-color: #3a3a3a; }
+.btn svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: 0.7; }
 
 .icon {
   flex: none; width: 32px; height: 32px; border-radius: 8px;
@@ -195,6 +233,7 @@ a.row:hover { background: #1a1a1a; }
 @media (max-width: 480px) {
   main { padding-top: 64px; }
   .tab { padding: 0 6px; font-size: 13px; gap: 6px; }
+  .detail-body { padding-left: 12px; }
 }
 
 /* Typing intro */
@@ -208,16 +247,7 @@ a.row:hover { background: #1a1a1a; }
 .caret.busy { animation: none; }
 @keyframes caret-blink { 50% { opacity: 0; } }
 
-/* Link arrow next to names */
-.out {
-  fill: none; stroke: var(--text); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
-  opacity: 0; transition: opacity 0.2s, transform 0.2s;
-}
-a.row:hover .out { opacity: 0.8; transform: translate(1px, -1px); }
-@media (hover: none) { .out { opacity: 0.5; } }
-
-/* OG-Network: roles line and a soft green glow */
-.role { font-size: 13px; color: var(--text); opacity: 0.85; }
+/* OG-Network: a soft green glow */
 .row.glow { transition: background-color 0.2s, box-shadow 0.2s; }
 .row.glow:hover {
   background: rgba(63, 185, 80, 0.07);
