@@ -84,6 +84,13 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
 @media (prefers-reduced-motion: reduce) { .plus { transition: none; } }
 .tab[aria-expanded="true"] { color: var(--text); }
 .tab:focus-visible { outline-offset: -2px; }
+.tab-icon {
+  display: grid; place-items: center; width: 22px; height: 22px; border-radius: 6px;
+  border: 1px solid #2a2a2a; background: #161616; color: var(--muted);
+  transition: color 0.15s, border-color 0.15s;
+}
+.tab-icon svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.tab:hover .tab-icon, .tab[aria-expanded="true"] .tab-icon { color: var(--text); border-color: #3a3a3a; }
 .count {
   font-size: 12px; line-height: 1; color: var(--faint);
   font-variant-numeric: tabular-nums; transition: color 0.15s;
