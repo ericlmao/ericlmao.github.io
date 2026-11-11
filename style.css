@@ -247,10 +247,11 @@ button.row:hover { background: #1a1a1a; }
 .caret.busy { animation: none; }
 @keyframes caret-blink { 50% { opacity: 0; } }
 
-/* OG-Network: a soft green glow */
-.row.glow { transition: background-color 0.2s, box-shadow 0.2s; }
-.row.glow:hover {
+/* OG-Network: a soft green glow around the whole item, so it never cuts into the open details */
+.list > li.glow { transition: background-color 0.2s, box-shadow 0.2s; }
+.list > li.glow:hover {
   background: rgba(63, 185, 80, 0.07);
   box-shadow: 0 0 0 1px rgba(63, 185, 80, 0.35), 0 0 24px -4px rgba(63, 185, 80, 0.35);
 }
-.row.glow:hover .icon { box-shadow: 0 0 14px rgba(63, 185, 80, 0.5); }
+.list > li.glow > .row:hover { background: none; }
+.list > li.glow:hover .icon { box-shadow: 0 0 14px rgba(63, 185, 80, 0.5); }
