@@ -236,15 +236,16 @@ button.row:hover { background: #1a1a1a; }
 .tabs.single { grid-template-columns: 1fr; }
 .tabs.single .indicator { width: calc(100% - 8px); }
 .tabs.single[data-active] .indicator { opacity: 1; transform: none; }
+.ai-stage + .tabs { margin-top: 10px; }
 .ai-stage { display: flow-root; transition: height 0.32s cubic-bezier(0.22, 1, 0.36, 1); }
 .ai .panel.open { margin-top: 10px; }
 .no-js .ai .panel { margin-top: 10px; }
 .lead { margin: 0; padding: 10px 10px 6px; color: var(--muted); font-size: 14px; }
 .row.top { align-items: flex-start; }
 .row.top .icon { margin-top: 2px; }
-#panel-ai .icon-glyph { color: var(--text); }
-#panel-ai .name { font-weight: 600; color: #fff; }
-#panel-ai .desc { margin-top: 2px; }
+.ai .panel .icon-glyph { color: var(--text); }
+.ai .panel .name { font-weight: 600; color: #fff; }
+.ai .panel .desc { margin-top: 2px; }
 
 @media (max-width: 480px) {
   main { padding-top: 64px; }

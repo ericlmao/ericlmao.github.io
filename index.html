@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=15">
   <script>document.documentElement.className = "js" + (matchMedia("(prefers-reduced-motion: reduce)").matches ? "" : " type-pending");</script>
 </head>
 <body>
@@ -259,9 +259,38 @@
           </ul>
         </div>
       </div>
+      <div class="tabs single">
+        <span class="indicator" aria-hidden="true"></span>
+        <button class="tab" type="button" aria-expanded="false" aria-controls="panel-nms">No NMS rule <span class="plus" aria-hidden="true"><svg viewBox="0 0 12 12" width="10" height="10"><path d="M6 1.5v9M1.5 6h9"/></svg></span></button>
+      </div>
+      <div class="ai-stage">
+        <div class="panel" id="panel-nms" role="region" aria-label="No NMS rule">
+          <p class="lead">I've been a software developer specializing in Minecraft plugins since 2019, and not once have I had to use NMS, the server's internal code that changes with every update.</p>
+          <ul class="list">
+            <li>
+              <div class="row top">
+                <span class="icon icon-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
+                <span class="text"><span class="name">API first</span><span class="desc">I always go through the server API. It stays stable between versions, so code written against it keeps working.</span></span>
+              </div>
+            </li>
+            <li>
+              <div class="row top">
+                <span class="icon icon-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></span>
+                <span class="text"><span class="name">Libraries for the rest</span><span class="desc">When I need protocol-level work, libraries like PacketEvents wrap the NMS and packet code for me and handle the version changes.</span></span>
+              </div>
+            </li>
+            <li>
+              <div class="row top">
+                <span class="icon icon-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+                <span class="text"><span class="name">Built to last</span><span class="desc">My plugins can go unmaintained for years and still work on the latest versions. Punishments hasn't been updated in years and still runs on 26.3.</span></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
   </main>
-  <script src="type.js?v=14"></script>
-  <script src="explorer.js?v=14"></script>
+  <script src="type.js?v=15"></script>
+  <script src="explorer.js?v=15"></script>
 </body>
 </html>

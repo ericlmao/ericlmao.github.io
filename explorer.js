@@ -125,17 +125,19 @@
     });
   }
 
-  // "How I use AI": a separate dropdown under the explorer.
-  const aiTabs = document.querySelector(".ai .tabs");
-  const aiTab = aiTabs.querySelector(".tab");
-  const aiPanel = document.getElementById(aiTab.getAttribute("aria-controls"));
-  aiTab.addEventListener("click", () => {
-    const on = aiTab.getAttribute("aria-expanded") !== "true";
-    withHeightTransition(() => {
-      aiTab.setAttribute("aria-expanded", String(on));
-      aiPanel.classList.toggle("open", on);
-      if (on) aiTabs.dataset.active = "ai";
-      else delete aiTabs.dataset.active;
-    }, document.querySelector(".ai-stage"));
-  });
+  // About me: independent dropdowns, each a single-button bar followed by its stage.
+  for (const bar of document.querySelectorAll(".ai .tabs.single")) {
+    const tab = bar.querySelector(".tab");
+    const panel = document.getElementById(tab.getAttribute("aria-controls"));
+    const box = bar.nextElementSibling;
+    tab.addEventListener("click", () => {
+      const on = tab.getAttribute("aria-expanded") !== "true";
+      withHeightTransition(() => {
+        tab.setAttribute("aria-expanded", String(on));
+        panel.classList.toggle("open", on);
+        if (on) bar.dataset.active = "";
+        else delete bar.dataset.active;
+      }, box);
+    });
+  }
 })();
