@@ -165,6 +165,15 @@ a.row:hover { background: #1a1a1a; }
 .meta.live { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
 .meta.live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
 
+/* How I use AI */
+.ai { margin-top: 64px; }
+.ai h2 { margin: 0 0 8px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
+.ai .lead { margin: 0; color: var(--muted); font-size: 14px; }
+.points { margin: 20px 0 0; display: grid; gap: 16px; }
+.points div { padding-left: 14px; border-left: 1px solid var(--line); }
+.points dt { font-size: 14px; font-weight: 500; }
+.points dd { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+
 @media (max-width: 480px) {
   main { padding-top: 64px; }
 }
