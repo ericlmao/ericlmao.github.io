@@ -14,7 +14,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=6">
+  <link rel="stylesheet" href="style.css?v=7">
   <script>document.documentElement.className = "js" + (matchMedia("(prefers-reduced-motion: reduce)").matches ? "" : " type-pending");</script>
 </head>
 <body>
@@ -34,6 +34,7 @@
         <span class="indicator" aria-hidden="true"></span>
         <button class="tab" type="button" aria-expanded="false" aria-controls="panel-projects" data-section="projects">Projects <span class="count">5</span></button>
         <button class="tab" type="button" aria-expanded="false" aria-controls="panel-servers" data-section="servers">Servers <span class="count">4</span></button>
+        <button class="tab" type="button" aria-expanded="false" aria-controls="panel-ai" data-section="ai">How I use AI</button>
       </div>
 
       <div class="stage">
@@ -134,29 +135,33 @@
           </li>
         </ul>
       </div>
+      <div class="panel" id="panel-ai" role="region" aria-label="How I use AI">
+        <p class="lead">I use AI to program faster, not to think for me. I decide what gets built and how it fits together, and every change is checked with unit tests and real in-game testing before it ships.</p>
+        <ul class="list">
+          <li>
+            <div class="row top">
+              <span class="icon icon-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></span>
+              <span class="text"><span class="name">I make the calls</span><span class="desc">AI drafts and I edit. Architecture, trade-offs and what's worth building stay with me, and nothing merges without my review.</span></span>
+            </div>
+          </li>
+          <li>
+            <div class="row top">
+              <span class="icon icon-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></span>
+              <span class="text"><span class="name">Skills over defaults</span><span class="desc">Default AI output is generic. I give it skills: written rules for how I work, like my Java conventions, project structure, testing and commit style. Each project keeps a short knowledge base of decisions and verified fixes, so the same mistakes don't come back.</span></span>
+            </div>
+          </li>
+          <li>
+            <div class="row top">
+              <span class="icon icon-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg></span>
+              <span class="text"><span class="name">Research, decide, build</span><span class="desc">Bigger tasks go in steps. First it reads the codebase and docs, then it weighs the options, then it writes the code, and I check the result at each step. The code ends up reading like code I'd write myself.</span></span>
+            </div>
+          </li>
+        </ul>
+      </div>
       </div>
     </div>
-
-    <section class="ai" aria-labelledby="ai-title">
-      <h2 id="ai-title">How I use AI</h2>
-      <p class="lead">I use AI to program faster, not to think for me. I decide what gets built and how it fits together, and every change is checked with unit tests and real in-game testing before it ships.</p>
-      <dl class="points">
-        <div>
-          <dt>I make the calls</dt>
-          <dd>AI drafts and I edit. Architecture, trade-offs and what's worth building stay with me, and nothing merges without my review.</dd>
-        </div>
-        <div>
-          <dt>Skills over defaults</dt>
-          <dd>Default AI output is generic. I give it skills: written rules for how I work, like my Java conventions, project structure, testing and commit style. Each project keeps a short knowledge base of decisions and verified fixes, so the same mistakes don't come back.</dd>
-        </div>
-        <div>
-          <dt>Research, decide, build</dt>
-          <dd>Bigger tasks go in steps. First it reads the codebase and docs, then it weighs the options, then it writes the code, and I check the result at each step. The code ends up reading like code I'd write myself.</dd>
-        </div>
-      </dl>
-    </section>
   </main>
-  <script src="type.js?v=6"></script>
-  <script src="explorer.js?v=6"></script>
+  <script src="type.js?v=7"></script>
+  <script src="explorer.js?v=7"></script>
 </body>
 </html>

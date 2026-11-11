@@ -43,12 +43,12 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
 .explorer { margin-top: 48px; }
 
 .tabs {
-  position: relative; display: grid; grid-template-columns: 1fr 1fr;
+  position: relative; display: grid; grid-template-columns: repeat(3, 1fr);
   padding: 4px; border-radius: 12px;
   background: #111; border: 1px solid var(--line);
 }
 .indicator {
-  position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc(50% - 4px);
+  position: absolute; top: 4px; bottom: 4px; left: 4px; width: calc((100% - 8px) / 3);
   border-radius: 8px; background: #1e1e1e;
   box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06), 0 1px 2px rgba(0, 0, 0, 0.5);
   opacity: 0; transform: translateX(0);
@@ -56,6 +56,7 @@ h1 { margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -0.02em; }
 }
 .tabs[data-active="projects"] .indicator { opacity: 1; transform: translateX(0); }
 .tabs[data-active="servers"] .indicator { opacity: 1; transform: translateX(100%); }
+.tabs[data-active="ai"] .indicator { opacity: 1; transform: translateX(200%); }
 
 .tab {
   position: relative; z-index: 1;
@@ -165,17 +166,17 @@ a.row:hover { background: #1a1a1a; }
 .meta.live { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); }
 .meta.live::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
 
-/* How I use AI */
-.ai { margin-top: 64px; }
-.ai h2 { margin: 0 0 8px; font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
-.ai .lead { margin: 0; color: var(--muted); font-size: 14px; }
-.points { margin: 20px 0 0; display: grid; gap: 16px; }
-.points div { padding-left: 14px; border-left: 1px solid var(--line); }
-.points dt { font-size: 14px; font-weight: 500; }
-.points dd { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+/* How I use AI panel */
+.lead { margin: 0; padding: 10px 10px 6px; color: var(--muted); font-size: 14px; }
+.row.top { align-items: flex-start; }
+.row.top .icon { margin-top: 2px; }
+#panel-ai .icon-glyph { color: var(--text); }
+#panel-ai .name { font-weight: 600; color: #fff; }
+#panel-ai .desc { margin-top: 2px; }
 
 @media (max-width: 480px) {
   main { padding-top: 64px; }
+  .tab { padding: 0 6px; font-size: 13px; gap: 6px; }
 }
 
 /* Typing intro */
